@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Cafe Eden</string>
+    <string name="menuBotaoContactos">Contactos</string>
+    <string name="menuBotaoGaleria">Galeria</string>
+    <string name="menuBotaoComida">Comidas</string>
+    <string name="textoBemVindo">Bem Vindo</string>
+    <string name="menuBotaoEventos">Eventos</string>
+    <string name="textoCabecalhoMenu">Menu</string>
+    <string name="contactsTelemovel">Telemóvel: 930551090</string>
+    <string name="contactsTelefone">Telefone: 229374492</string>
+    <string name="contactsPaginaFb">Pagina Facebook </string>
+    <string name="mapa">Mapa </string>
+    <string name="botaoIndisponivel">Indisponivel</string>
+
+
+
+
+
+</resources>

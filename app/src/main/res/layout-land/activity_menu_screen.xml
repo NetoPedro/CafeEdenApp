@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.netoapps2.cafeedenapp.MenuScreen">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="@string/textoCabecalhoMenu"
+        android:gravity="center"
+        android:layout_margin="16dp"
+        android:textSize="32sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/menuBotaoGaleria"
+        android:layout_marginLeft="44dp"
+        android:layout_marginRight="44dp"
+        android:text="@string/menuBotaoGaleria"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/menuBotaoContactos"
+        android:layout_marginLeft="44dp"
+        android:layout_marginRight="44dp"
+        android:text="@string/menuBotaoContactos" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/menuBotaoComida"
+        android:layout_marginLeft="44dp"
+        android:layout_marginRight="44dp"
+        android:text="@string/menuBotaoComida" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/menuBotaoEventos"
+        android:layout_marginLeft="44dp"
+        android:layout_marginRight="44dp"
+        android:text="@string/menuBotaoEventos" />
+
+
+</LinearLayout>
