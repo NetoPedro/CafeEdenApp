@@ -1,19 +1,23 @@
 package com.netoapps2.cafeedenapp;
 
+import java.net.URI;
+import java.net.URL;
+
 class Comida {
 
     private String nome;
     private String descricao;
-    private int pic;
+    private String pic;
 
 
-    public Comida(int pic, String nome, String descricao){
+    public Comida(String pic, String nome, String descricao){
         setPic(pic);
         setDescricao(descricao);
         setNome(nome);
     }
 
-    public void setPic(int pic){
+
+    public void setPic(String pic){
         this.pic = pic;
     }
 
@@ -33,7 +37,7 @@ class Comida {
         this.descricao = descricao;
     }
 
-    public int getPic() {
+    public String getPic() {
         return pic;
     }
 }

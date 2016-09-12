@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder>{
@@ -37,7 +39,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         Comida item = listaComidas.get(position);
         holder.textNome.setText(item.getNome());
         holder.textDescricao.setText(item.getDescricao());
-        holder.imageComida.setImageResource(item.getPic());
+        Glide.with(mContext)
+                .load(item.getPic())
+                .fitCenter()
+                .placeholder(R.drawable.loading)
+                .crossFade()
+                .into(holder.imageComida);
+
 
     }
 
