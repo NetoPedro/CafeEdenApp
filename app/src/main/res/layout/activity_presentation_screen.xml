@@ -14,20 +14,20 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:id="@+id/logoCafeImageView"
         android:layout_weight="4"
-        android:src="@drawable/ic_launcher"
         android:layout_marginRight="36dp"/>
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:id="@+id/logoSubTextCafeImageView"
         android:layout_weight="1"
-        android:src="@drawable/cafesanckbar"
         android:layout_gravity="center"/>
-    <TextView
+    <!--<TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
         android:text="@string/textoBemVindo"
         android:gravity="center"
-        android:textSize="32sp"/>
+        android:textSize="32sp"/> -->
 </LinearLayout>

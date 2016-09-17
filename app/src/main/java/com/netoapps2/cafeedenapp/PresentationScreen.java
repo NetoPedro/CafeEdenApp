@@ -5,15 +5,30 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.bumptech.glide.Glide;
+
 public class PresentationScreen extends AppCompatActivity {
+
+    private ImageView imageViewLogo, imageViewLogoSubText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_presentation_screen);
+        imageViewLogo = (ImageView) findViewById(R.id.logoCafeImageView);
+        imageViewLogoSubText = (ImageView) findViewById(R.id.logoSubTextCafeImageView);
+        addImages(R.drawable.ic_launcher, imageViewLogo);
+        addImages(R.drawable.cafesanckbar, imageViewLogoSubText);
+
+
+
+
+
+
         LinearLayout layout = (LinearLayout) findViewById(R.id.layoutSplashScreen);
         layout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,4 +48,31 @@ public class PresentationScreen extends AppCompatActivity {
         }, 100);
         */
     }
+
+    private void addImages(int image , ImageView destino){
+        Glide.with(this)
+                .load(image)
+                .fitCenter()
+                .crossFade()
+                .into(destino);
+
+    }
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
