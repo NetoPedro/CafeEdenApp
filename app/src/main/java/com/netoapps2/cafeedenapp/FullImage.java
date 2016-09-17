@@ -1,6 +1,7 @@
 package com.netoapps2.cafeedenapp;
 
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -64,7 +65,10 @@ public class FullImage extends AppCompatActivity {
                 .placeholder(R.drawable.loading)
                 .crossFade()
                 .into(imageView);
+        Snackbar snackbar = Snackbar
+                .make((View) imageView.getParent(), (position+1)+"/"+imageAdapter.getCount(), Snackbar.LENGTH_LONG);
 
+        snackbar.show();
         imageView.startAnimation(animation);
 
 
