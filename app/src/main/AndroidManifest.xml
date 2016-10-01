@@ -10,8 +10,10 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".PresentationScreen">
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".PresentationScreen"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,9 +22,15 @@
         </activity>
         <activity android:name=".MenuScreen" />
         <activity android:name=".GalleryScreen" />
-        <activity android:name=".FullImage" />
+        <activity
+            android:name=".FullImage"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Contacts" />
         <activity android:name=".Comidas" />
+        <activity
+            android:name=".MenuActivity"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
