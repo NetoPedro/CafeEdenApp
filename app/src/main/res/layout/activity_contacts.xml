@@ -11,7 +11,7 @@
     android:orientation="vertical">\
 
 
-    <TextView
+   <!-- <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/menuBotaoContactos"
@@ -20,7 +20,7 @@
         android:layout_marginBottom="64dp"
         android:layout_marginTop="16dp"
         android:gravity="center_horizontal"/>
-
+    -->
 
     <ImageView
         android:layout_width="wrap_content"
@@ -29,8 +29,9 @@
         android:id="@+id/telemovelLogo"
         android:layout_marginBottom="32dp"
         android:src="@drawable/phone_icon"
-        android:layout_below="@id/contactsHeader"
-        />
+        android:layout_marginTop="32dp"/>
+        <!--android:layout_below="@id/contactsHeader"-->
+
 
     <ImageView
         android:layout_width="wrap_content"
@@ -48,9 +49,10 @@
         android:textSize="24sp"
         android:layout_toRightOf="@id/telemovelLogo"
         android:paddingLeft="8dp"
-        android:layout_below="@id/contactsHeader"
         android:text="@string/contactsTelemovel"
+        android:layout_marginTop="32dp"
         />
+    <!--android:layout_below="@id/contactsHeader"-->
 
     <TextView
         android:layout_width="match_parent"

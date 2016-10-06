@@ -22,6 +22,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -40,18 +41,23 @@ public class MenuActivity extends AppCompatActivity {
      */
     private List<Fragment> fragmentList = new ArrayList<>();
     private ViewPager mViewPager;
-
+    private String tabs[] = {"Galeria","Comidas","Contactos"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
         Bundle page = new Bundle();
-        fragmentList.add(Fragment.instantiate(this,ContactsFragment.class.getName(),page));
         fragmentList.add(Fragment.instantiate(this,GalleryFragment.class.getName(),page));
         fragmentList.add(Fragment.instantiate(this,ComidasFragment.class.getName(),page));
+        fragmentList.add(Fragment.instantiate(this,ContactsFragment.class.getName(),page));
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        setSupportActionBar(toolbar);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), fragmentList);
@@ -59,10 +65,9 @@ public class MenuActivity extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-        /*setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        toolbar.inflateMenu();*/
+        tabLayout.setupWithViewPager(mViewPager);
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -123,13 +128,14 @@ public class MenuActivity extends AppCompatActivity {
 
         @Override
         public CharSequence getPageTitle(int position) {
+            Locale l =Locale.getDefault();
             switch (position) {
                 case 0:
-                    return "SEXTION 1";
+                    return getString(R.string.menuBotaoGaleria).toUpperCase(l);
                 case 1:
-                    return "SECTION 2";
+                    return getString(R.string.menuBotaoComida).toUpperCase(l);
                 case 2:
-                    return "SECTION 3";
+                    return getString(R.string.menuBotaoContactos).toUpperCase(l);
             }
             return null;
         }

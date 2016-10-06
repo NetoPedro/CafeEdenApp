@@ -10,13 +10,13 @@
     tools:context="com.netoapps2.cafeedenapp.GalleryScreen"
     android:orientation="vertical">
 
-    <TextView
+   <!-- <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="@string/menuBotaoGaleria"
         android:textSize="32sp"
         android:gravity="center_horizontal"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp"/> -->
 
     <GridView
         android:layout_width="match_parent"
