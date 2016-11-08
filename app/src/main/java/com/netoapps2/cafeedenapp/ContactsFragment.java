@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * Created by pedroneto on 01/10/16.
+ * Created by pedroneto on 01/10/16.‹
  */
 public class ContactsFragment extends Fragment {
 

@@ -23,12 +23,14 @@ public class Comidas extends AppCompatActivity {
                 ".\nRechada de um delicioso bife, queijo, fiambre e salsicha fresca"));
         adicionarComida(new Comida("https://scontent.flis1-1.fna.fbcdn.net/t31.0-8/12240195_589998354471570_1228903458506469620_o.jpg", "Lombo Assado", "Uma deliciosa fatia de lombo, acompanhada de umas +" +
                 "saborosas batatasa assadas e arroz branco"));
+
         RecyclerAdapter adapterComida = new RecyclerAdapter(this, listaComidas);
         rv.setAdapter(adapterComida);
     }
 
     public void adicionarComida(Comida comida){
-        if (!listaComidas.contains(comida)) listaComidas.add(comida);
+
+        if (!listaComidas.contains(comida))listaComidas.add(comida);
     }
 }
 

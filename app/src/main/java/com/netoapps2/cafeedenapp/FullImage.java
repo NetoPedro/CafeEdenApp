@@ -26,6 +26,7 @@ public class FullImage extends AppCompatActivity {
         setContentView(R.layout.activity_full_image);
         Intent i = getIntent();
         imageAdapter= new ImageAdapter(this);
+        imageAdapter.sortByCategory();
         imageView = (ImageView) findViewById(R.id.fullImageView);
         position = i.getExtras().getInt("pos");
         esquerda = (ImageView) findViewById(R.id.moverImagemEsquerda);
@@ -56,20 +57,22 @@ public class FullImage extends AppCompatActivity {
 
     private void instanciarImagem(){
         Animation animation = AnimationUtils.loadAnimation(this, android.R.anim.fade_in);
-
+        ImagemGaleria imagemGaleria = (ImagemGaleria) imageAdapter.getItem(position);
         //Picasso.with(this).load( Uri.parse((String) imageAdapter.getItem(position))).into(imageView);
         //imageView.setImageResource((Integer) imageAdapter.getItem(position));
         Glide.with(this)
-                .load((String) imageAdapter.getItem(position))
+                .load(imagemGaleria.getUrl())
                 .fitCenter()
                 .placeholder(R.drawable.loading)
                 .crossFade()
                 .into(imageView);
         Snackbar snackbar = Snackbar
-                .make((View) imageView.getParent(), (position+1)+"/"+imageAdapter.getCount(), Snackbar.LENGTH_LONG);
+                .make((View) imageView.getParent(), (position+1)+"/"+imageAdapter.getCount() + "\nCategoria : "+
+                       imagemGaleria.getCategoria() , Snackbar.LENGTH_LONG);
 
         snackbar.show();
         imageView.startAnimation(animation);
+
 
 
     }

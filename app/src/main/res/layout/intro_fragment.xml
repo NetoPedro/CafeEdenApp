@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:weightSum="10">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_weight="2.5"
+        android:layout_height="0dp"
+        android:src="@drawable/cafesanckbar"
+        android:id="@+id/imageView" />
+
+    <ScrollView
+        android:layout_weight="7.5"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:id="@+id/scrollView" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            android:id="@+id/linearLayoutIntro">
+            <TextView
+                android:layout_weight="5"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:textSize="20sp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Bem vindos ao Éden.\nSomos um café-snack Bar situado em Matosinhos sul, mais Concretamente na Rua Sousa Aroso,Matosinhos. Estamos abertos desde Fevereiro de 2003."
+                android:id="@+id/textView"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_launcher"/>
+            <TextView
+                android:layout_weight="5"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:textSize="20sp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Temos aproveitado estes 13 anos de contacto com o público para\n ev\no\nl\nu\nir e melhorar o nosso serviço\nSejas de onde fores, vem conhecer-nos. \nVem conhecer o nosso peixe, as nossas francesinhas e os nossos deliciosos bolos. \nNão hesites."/>
+        </LinearLayout>
+    </ScrollView>
+
 
 </LinearLayout>
