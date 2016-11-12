@@ -5,15 +5,10 @@
     android:layout_height="match_parent"
     android:weightSum="10">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_weight="2.5"
-        android:layout_height="0dp"
-        android:src="@drawable/cafesanckbar"
-        android:id="@+id/imageView" />
+
 
     <ScrollView
-        android:layout_weight="7.5"
+        android:layout_weight="10"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:id="@+id/scrollView" >
@@ -24,6 +19,12 @@
             android:orientation="vertical"
             android:scrollbars="vertical"
             android:id="@+id/linearLayoutIntro">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_weight="2"
+                android:layout_height="0dp"
+                android:src="@drawable/cafesanckbar"
+                android:id="@+id/imageView" />
             <TextView
                 android:layout_weight="5"
                 android:layout_width="wrap_content"

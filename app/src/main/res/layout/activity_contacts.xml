@@ -86,13 +86,27 @@
         android:layout_marginBottom="32dp"
         android:text="@string/contactsPaginaFb"
         />
-    <Button
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/botaoMapa"
+        android:id="@+id/mapLogo"
+        android:layout_marginBottom="32dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="8dp"
+        android:src="@drawable/mapicon"
+        android:layout_below="@id/facebookLogo" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mapText"
+        android:textSize="24sp"
         android:layout_below="@id/facebookLogo"
-        android:layout_centerInParent="true"
-        android:text="@string/mapa"
+        android:layout_toRightOf="@id/mapLogo"
+        android:paddingLeft="8dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="32dp"
+        android:text="Encontra-nos"
         />
+
 
 </RelativeLayout>

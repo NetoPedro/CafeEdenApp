@@ -19,7 +19,6 @@ import android.widget.TextView;
 public class ContactsFragment extends Fragment {
 
         private static final String ARG_SECTION_NUMBER = "section_number";
-    private Button botao ;
 
     private static final String FACEBOOK_URL = "https://www.facebook.com/amiguinhosdoeden";
     private static final String FACEBOOK_PAGE_ID = "amiguinhosdoeden";
@@ -42,7 +41,8 @@ public class ContactsFragment extends Fragment {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.activity_contacts, container, false);
-            botao = (Button) rootView.findViewById(R.id.botaoMapa);
+            ImageView mapLogo = (ImageView) rootView.findViewById(R.id.mapLogo);
+            final TextView mapText = (TextView) rootView.findViewById(R.id.mapText);
             View.OnClickListener action1 = new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -52,8 +52,7 @@ public class ContactsFragment extends Fragment {
                     if (i.resolveActivity(getActivity().getPackageManager()) != null)
                         startActivity(i);
                     else {
-                        botao.setEnabled(false);
-                        botao.setText(R.string.botaoIndisponivel);
+                        mapText.setText(R.string.botaoIndisponivel);
 
                     }
                 }
@@ -84,7 +83,8 @@ public class ContactsFragment extends Fragment {
 
                 }
             };
-            botao.setOnClickListener(action1);
+            mapLogo.setOnClickListener(action1);
+            mapText.setOnClickListener(action1);
             TextView telefoneText = (TextView) rootView.findViewById(R.id.telefone);
             TextView telemovelText = (TextView) rootView.findViewById(R.id.telemovel);
             TextView facebookText = (TextView) rootView.findViewById(R.id.facebook);
