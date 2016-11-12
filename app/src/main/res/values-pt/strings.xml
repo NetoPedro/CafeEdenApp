@@ -2,7 +2,7 @@
     <string name="app_name">Cafe Eden</string>
     <string name="menuBotaoContactos">Contactos</string>
     <string name="menuBotaoGaleria">Galeria</string>
-    <string name="menuBotaoComida">Comidas</string>
+    <string name="menuBotaoComida">Sugestões</string>
     <string name="textoBemVindo">Bem Vindo</string>
     <string name="menuBotaoEventos">Eventos</string>
     <string name="textoCabecalhoMenu">Menu</string>
