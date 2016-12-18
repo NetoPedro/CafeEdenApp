@@ -4,11 +4,12 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/accent_material_light</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/accent_material_light</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:colorBackground">@color/primary_material_light</item>
         <item name="android:textColorPrimary">@color/foreground_material_light</item>
         <item name="android:textColorSecondary">@color/foreground_material_light</item>
+        <item name="android:colorForeground">@color/accent_material_light</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

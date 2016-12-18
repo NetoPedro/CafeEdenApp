@@ -31,7 +31,7 @@
                 android:layout_height="0dp"
                 android:textSize="20sp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Bem vindos ao Éden.\nSomos um café-snack Bar situado em Matosinhos sul, mais Concretamente na Rua Sousa Aroso,Matosinhos. Estamos abertos desde Fevereiro de 2003."
+                android:text="@string/homeText1"
                 android:id="@+id/textView"
                 />
             <ImageView
@@ -45,7 +45,7 @@
                 android:layout_height="0dp"
                 android:textSize="20sp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Temos aproveitado estes 13 anos de contacto com o público para\n ev\no\nl\nu\nir e melhorar o nosso serviço\nSejas de onde fores, vem conhecer-nos. \nVem conhecer o nosso peixe, as nossas francesinhas e os nossos deliciosos bolos. \nNão hesites."/>
+                android:text="@string/homeText2"></TextView>
         </LinearLayout>
     </ScrollView>
 
