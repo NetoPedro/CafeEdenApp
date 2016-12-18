@@ -15,6 +15,7 @@ public class FullImage extends AppCompatActivity {
 
     private ImageView esquerda;
     private ImageView direita;
+    private ImageView rotate;
     private int  position;
     private ImageAdapter imageAdapter;
     private ImageView imageView;
@@ -29,6 +30,7 @@ public class FullImage extends AppCompatActivity {
         imageAdapter.sortByCategory();
         imageView = (ImageView) findViewById(R.id.fullImageView);
         position = i.getExtras().getInt("pos");
+        rotate = (ImageView) findViewById(R.id.imageView2);
         esquerda = (ImageView) findViewById(R.id.moverImagemEsquerda);
         direita = (ImageView) findViewById(R.id.moverImagemDireita);
         esquerda.setOnClickListener(new View.OnClickListener() {
@@ -48,6 +50,13 @@ public class FullImage extends AppCompatActivity {
                 instanciarImagem();
             }
 
+        });
+        rotate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                imageView.setRotation(imageView.getRotation()+90);
+
+            }
         });
     instanciarImagem();
 
