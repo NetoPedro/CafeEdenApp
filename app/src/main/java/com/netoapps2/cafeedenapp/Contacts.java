@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Contacts extends AppCompatActivity {
-
+/*
     private Button botao ;
 
     private static final String FACEBOOK_URL = "https://www.facebook.com/amiguinhosdoeden";
@@ -87,4 +87,5 @@ public class Contacts extends AppCompatActivity {
             return FACEBOOK_URL; //normal web url
         }
     }
+    */
 }

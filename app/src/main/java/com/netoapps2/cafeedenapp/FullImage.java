@@ -15,6 +15,7 @@ public class FullImage extends AppCompatActivity {
 
     private ImageView esquerda;
     private ImageView direita;
+    private ImageView rotate;
     private int  position;
     private ImageAdapter imageAdapter;
     private ImageView imageView;
@@ -26,8 +27,10 @@ public class FullImage extends AppCompatActivity {
         setContentView(R.layout.activity_full_image);
         Intent i = getIntent();
         imageAdapter= new ImageAdapter(this);
+        imageAdapter.sortByCategory();
         imageView = (ImageView) findViewById(R.id.fullImageView);
         position = i.getExtras().getInt("pos");
+        rotate = (ImageView) findViewById(R.id.imageView2);
         esquerda = (ImageView) findViewById(R.id.moverImagemEsquerda);
         direita = (ImageView) findViewById(R.id.moverImagemDireita);
         esquerda.setOnClickListener(new View.OnClickListener() {
@@ -48,6 +51,13 @@ public class FullImage extends AppCompatActivity {
             }
 
         });
+        rotate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                imageView.setRotation(imageView.getRotation()+90);
+
+            }
+        });
     instanciarImagem();
 
 
@@ -56,20 +66,22 @@ public class FullImage extends AppCompatActivity {
 
     private void instanciarImagem(){
         Animation animation = AnimationUtils.loadAnimation(this, android.R.anim.fade_in);
-
+        ImagemGaleria imagemGaleria = (ImagemGaleria) imageAdapter.getItem(position);
         //Picasso.with(this).load( Uri.parse((String) imageAdapter.getItem(position))).into(imageView);
         //imageView.setImageResource((Integer) imageAdapter.getItem(position));
         Glide.with(this)
-                .load((String) imageAdapter.getItem(position))
+                .load(imagemGaleria.getUrl())
                 .fitCenter()
                 .placeholder(R.drawable.loading)
                 .crossFade()
                 .into(imageView);
         Snackbar snackbar = Snackbar
-                .make((View) imageView.getParent(), (position+1)+"/"+imageAdapter.getCount(), Snackbar.LENGTH_LONG);
+                .make((View) imageView.getParent(), (position+1)+"/"+imageAdapter.getCount() + "\nCategoria : "+
+                       imagemGaleria.getCategoria() , Snackbar.LENGTH_LONG);
 
         snackbar.show();
         imageView.startAnimation(animation);
+
 
 
     }

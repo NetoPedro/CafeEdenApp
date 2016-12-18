@@ -10,15 +10,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * Created by pedroneto on 01/10/16.
+ * Created by pedroneto on 01/10/16.‹
  */
 public class ContactsFragment extends Fragment {
 
         private static final String ARG_SECTION_NUMBER = "section_number";
-    private Button botao ;
 
     private static final String FACEBOOK_URL = "https://www.facebook.com/amiguinhosdoeden";
     private static final String FACEBOOK_PAGE_ID = "amiguinhosdoeden";
@@ -41,8 +41,9 @@ public class ContactsFragment extends Fragment {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.activity_contacts, container, false);
-            botao = (Button) rootView.findViewById(R.id.botaoMapa);
-            botao.setOnClickListener(new View.OnClickListener() {
+            ImageView mapLogo = (ImageView) rootView.findViewById(R.id.mapLogo);
+            final TextView mapText = (TextView) rootView.findViewById(R.id.mapText);
+            View.OnClickListener action1 = new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Uri uriIntentMap = Uri.parse("geo:0,0?q=1600" + Uri.encode("R. Sousa Aroso 447, 4450-289, Matosinhos"));
@@ -51,33 +52,28 @@ public class ContactsFragment extends Fragment {
                     if (i.resolveActivity(getActivity().getPackageManager()) != null)
                         startActivity(i);
                     else {
-                        botao.setEnabled(false);
-                        botao.setText(R.string.botaoIndisponivel);
+                        mapText.setText(R.string.botaoIndisponivel);
 
                     }
                 }
-            });
-            TextView telefoneText = (TextView) rootView.findViewById(R.id.telefone);
-            TextView telemovelText = (TextView) rootView.findViewById(R.id.telemovel);
-            TextView facebookText = (TextView) rootView.findViewById(R.id.facebook);
-            telefoneText.setOnClickListener(new View.OnClickListener() {
+            };
+            View.OnClickListener action2 = new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Uri uriIntentCall = Uri.parse("tel:930551090");
                     Intent i = new Intent(Intent.ACTION_DIAL, uriIntentCall);
                     startActivity(i);
                 }
-            });
-            telemovelText.setOnClickListener(new View.OnClickListener() {
+            };
+            View.OnClickListener action3 = new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Uri uriIntentCall = Uri.parse("tel:229374492");
                     Intent i = new Intent(Intent.ACTION_DIAL, uriIntentCall);
                     startActivity(i);
                 }
-            });
-
-            facebookText.setOnClickListener(new View.OnClickListener() {
+            };
+            View.OnClickListener action4 = new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent facebookIntent = new Intent(Intent.ACTION_VIEW);
@@ -86,7 +82,21 @@ public class ContactsFragment extends Fragment {
                     startActivity(facebookIntent);
 
                 }
-            });
+            };
+            mapLogo.setOnClickListener(action1);
+            mapText.setOnClickListener(action1);
+            TextView telefoneText = (TextView) rootView.findViewById(R.id.telefone);
+            TextView telemovelText = (TextView) rootView.findViewById(R.id.telemovel);
+            TextView facebookText = (TextView) rootView.findViewById(R.id.facebook);
+            ImageView telefoneLogo = (ImageView) rootView.findViewById(R.id.telemovelLogo);
+            ImageView telemovelLogo = (ImageView) rootView.findViewById(R.id.telefoneLogo);
+            ImageView facebookLogo = (ImageView) rootView.findViewById(R.id.facebookLogo);
+            telefoneText.setOnClickListener(action2);
+            telefoneLogo.setOnClickListener(action2);
+            telemovelText.setOnClickListener(action3);
+            telemovelLogo.setOnClickListener(action3);
+            facebookText.setOnClickListener(action4);
+            facebookLogo.setOnClickListener(action4);
 
             return rootView;
         }

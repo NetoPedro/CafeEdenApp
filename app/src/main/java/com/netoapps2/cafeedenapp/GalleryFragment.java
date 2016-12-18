@@ -42,7 +42,9 @@ public class GalleryFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.activity_gallery_screen, container, false);
         GridView gridView = (GridView) rootView.findViewById(R.id.galeriaGrid);
-        gridView.setAdapter(new ImageAdapter(getContext()));
+        ImageAdapter imageAdapter = new ImageAdapter(getContext());
+        imageAdapter.sortByCategory();
+        gridView.setAdapter(imageAdapter);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
             @Override
